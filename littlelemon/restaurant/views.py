@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from rest_framework import generic
 from rest_framework import viewsets
 from .models import *
@@ -16,11 +15,11 @@ def index(request):
 
 class MenuItemView(generic.ListCreateView):
     queryset = Menu.objects.all()
-    serializer_class = MenuItemSerialier
+    serializer_class = MenuItemSerializer
 
 class SingleMenuItemView(generic.RetrieveUpdateAPIView, generic.DestroyAPIView):
     queryset = Menu.objects.all()
-    serializer_class = MenuItemSerialier
+    serializer_class = MenuItemSerializer
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
